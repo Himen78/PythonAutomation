@@ -18,6 +18,13 @@ dropdown.select_by_index(0)
 driver.find_element_by_xpath("//input[@type='submit']").click()
 print(driver.find_element_by_class_name("alert-success").text)
 # //*[contains(@class,'alert-success')]
-driver.find_element_by_class_name("close").click()
 
+
+message = driver.find_element_by_class_name("alert-success").text
+
+# How to use assertion in Python as below :
+print(message)
+assert "success" in message
+
+driver.find_element_by_class_name("close").click()
 driver.close()
